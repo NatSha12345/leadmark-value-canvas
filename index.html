@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeadMark.AI — Value Canvas — Australia</title>
+<style>
+  :root {
+    --black: #1A1A1A;
+    --yellow: #FFD700;
+    --white: #FFFFFF;
+    --grey-light: #F5F5F5;
+    --grey-mid: #CCCCCC;
+    --grey-dark: #666666;
+    --cream: #FFFDF0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Calibri', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.5;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 2.5rem;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: var(--yellow);
+  }
+  .hero-brand { font-size: 0.95rem; font-weight: 700; color: var(--yellow); letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+  .hero h1 { font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
+  .hero-market { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 700; color: var(--grey-dark); margin-top: 0.6rem; letter-spacing: 0.05em; }
+  .hero-meta { font-size: 1rem; color: var(--grey-dark); margin-top: 1.2rem; }
+  .hero-founder { font-size: 0.9rem; color: var(--grey-dark); margin-top: 0.3rem; }
+  .hero-quote {
+    position: absolute;
+    bottom: 2rem; left: 2.5rem; right: 2.5rem;
+    font-size: 0.85rem; font-style: italic; color: var(--grey-dark);
+    border-top: 1px solid var(--grey-mid);
+    padding-top: 1rem;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 4rem 2.5rem; }
+  @media (min-width: 800px) { section { padding: 5rem 4rem; } }
+
+  .section-header {
+    background: var(--black);
+    color: var(--yellow);
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px 4px 0 0;
+  }
+  .section-header .brand { font-size: 0.7rem; color: var(--yellow); }
+
+  /* ─── STAT BANNER ─── */
+  .stat-banner {
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 2.5rem 2rem;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* ─── SIGNATURE METHOD ─── */
+  .method-section { background: var(--grey-light); }
+  .method-label { font-size: 0.75rem; font-weight: 700; color: var(--grey-dark); letter-spacing: 0.08em; margin-bottom: 0.2rem; }
+  .method-name { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .method-sub { font-size: 0.9rem; font-style: italic; color: var(--grey-dark); margin-bottom: 2rem; }
+  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .pillar {
+    padding: 1.5rem;
+    border-radius: 6px;
+    position: relative;
+  }
+  .pillar:nth-child(odd) { background: var(--yellow); color: var(--black); }
+  .pillar:nth-child(even) { background: var(--black); color: var(--white); }
+  .pillar h3 { font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 0.6rem; }
+  .pillar p { font-size: 0.88rem; line-height: 1.55; }
+  .pillar-arrow {
+    display: none;
+  }
+  @media (min-width: 900px) {
+    .pillar-arrow {
+      display: block;
+      position: absolute;
+      right: -0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--grey-dark);
+      z-index: 1;
+    }
+  }
+
+  /* ─── PAIN / PAYOFF ─── */
+  .pain-payoff-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 900px) {
+    .pain-payoff-grid { grid-template-columns: 1fr 1fr; gap: 0; }
+  }
+  .pp-column h2 {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    padding: 0.7rem 1.2rem;
+    background: var(--black);
+    color: var(--yellow);
+    border-radius: 4px 4px 0 0;
+  }
+  .pp-item {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--grey-mid);
+  }
+  .pp-item:nth-child(odd) { background: var(--cream); }
+  .pp-item:nth-child(even) { background: var(--grey-light); }
+  .pp-item h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .pp-item p { font-size: 0.92rem; color: #333; line-height: 1.6; }
+  .tension-label {
+    display: none;
+  }
+  @media (min-width: 900px) {
+    .tension-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-style: italic;
+      color: var(--grey-dark);
+      padding: 0 0.5rem;
+    }
+  }
+
+  /* ─── MISTAKES ─── */
+  .mistakes-section { background: var(--white); }
+  .root-cause {
+    background: var(--cream);
+    border-left: 4px solid var(--yellow);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0 6px 6px 0;
+  }
+  .root-cause h3 { font-size: 0.75rem; letter-spacing: 0.08em; color: var(--grey-dark); margin-bottom: 0.4rem; }
+  .root-cause p { font-size: 1rem; font-style: italic; }
+  .mistakes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 700px) { .mistakes-grid { grid-template-columns: 1fr 1fr; } }
+  .mistake-col h3 {
+    font-size: 0.75rem; letter-spacing: 0.08em; color: var(--grey-dark); margin-bottom: 1rem;
+    padding-bottom: 0.4rem; border-bottom: 2px solid var(--grey-mid);
+  }
+  .mistake-col ul { list-style: none; }
+  .mistake-col li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .mistake-col li::before { content: '\2022'; color: var(--yellow); font-weight: 700; margin-right: 0.6rem; }
+
+  /* ─── BOTTOM SECTION: ICP / DEEP FEAR / PRIZE ─── */
+  .icp-section {
+    background: var(--grey-light);
+    border: 1px solid var(--grey-mid);
+    border-radius: 6px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .icp-section h3 {
+    font-size: 0.75rem; letter-spacing: 0.08em; color: var(--grey-dark); margin-bottom: 0.3rem;
+  }
+  .icp-label { font-size: 0.8rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .icp-section p { font-size: 0.95rem; line-height: 1.65; }
+  .icp-acceptable {
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--grey-mid);
+  }
+  .icp-acceptable p { font-style: italic; color: var(--grey-dark); }
+
+  .fear-prize-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 800px) { .fear-prize-grid { grid-template-columns: 1.6fr 1fr; } }
+
+  .deep-fear {
+    background: var(--black);
+    color: var(--white);
+    padding: 2.5rem;
+    border-radius: 6px;
+  }
+  .deep-fear h3 {
+    font-size: 0.8rem; letter-spacing: 0.08em; color: var(--yellow); margin-bottom: 0.3rem;
+  }
+  .deep-fear .subtitle { font-size: 0.85rem; font-style: italic; color: var(--grey-mid); margin-bottom: 1.5rem; }
+  .deep-fear blockquote {
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.7;
+    border-left: 3px solid var(--yellow);
+    padding-left: 1.2rem;
+  }
+
+  .prize-box {
+    background: var(--yellow);
+    padding: 2.5rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .prize-box h3 { font-size: 0.8rem; letter-spacing: 0.08em; color: var(--black); margin-bottom: 0.3rem; }
+  .prize-box .subtitle { font-size: 0.8rem; font-style: italic; margin-bottom: 1.5rem; }
+  .prize-box .prize-text { font-size: 2rem; font-weight: 800; }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--black);
+    color: var(--grey-mid);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+  }
+  .footer .brand { color: var(--yellow); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-brand">LeadMark.AI</div>
+  <h1>VALUE CANVAS</h1>
+  <div class="hero-market">AUSTRALIA</div>
+  <div class="hero-meta">CAOS Cohort &middot; March 2026</div>
+  <div class="hero-founder">Nataliya Shalygina &middot; Founder, LeadMark.AI</div>
+  <div class="hero-quote">&ldquo;You&rsquo;re standing on a mountain of value.&rdquo; &mdash; Daniel Priestley</div>
+</div>
+
+<!-- STAT BANNER -->
+<div class="stat-banner">
+  Only 5% of Australian SMEs are fully realising AI&rsquo;s potential.<br>
+  76% have no clear AI strategy.<br>
+  <span style="font-size:0.8rem; color:var(--grey-mid);">&mdash; Deloitte / Dept. of Industry 2025</span>
+</div>
+
+<!-- SIGNATURE METHOD -->
+<section class="method-section">
+  <div class="method-label">SIGNATURE METHOD</div>
+  <div class="method-name">The AI Ownership Programme</div>
+  <div class="method-sub">Entry point: zero or not zero. We meet you where you are and build from there.</div>
+  <div class="pillars">
+    <div class="pillar">
+      <h3>AUDIT</h3>
+      <p>We start by understanding where you actually are. Starting from zero or already have AI running &mdash; we map your processes and show you exactly where to move next.</p>
+      <span class="pillar-arrow">&rarr;</span>
+    </div>
+    <div class="pillar">
+      <h3>BUILD</h3>
+      <p>We build the automation &mdash; and your team watches every step. No mystery. No black box. They understand what&rsquo;s being built and why.</p>
+      <span class="pillar-arrow">&rarr;</span>
+    </div>
+    <div class="pillar">
+      <h3>TRANSFER</h3>
+      <p>Now your team drives. We sit alongside them. They build the next one themselves, with us there if they get stuck.</p>
+      <span class="pillar-arrow">&rarr;</span>
+    </div>
+    <div class="pillar">
+      <h3>OWN</h3>
+      <p>Your team runs it. You&rsquo;re not paying us forever. You own the system, the knowledge, and the results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN & PAYOFF -->
+<section>
+  <div class="section-header">
+    <span>PAIN &harr; PAYOFF &middot; Australia</span>
+    <span class="brand">LeadMark.AI</span>
+  </div>
+  <div class="pain-payoff-grid">
+    <div class="pp-column">
+      <h2>PAIN &middot; Hook it, Land it</h2>
+      <div class="pp-item">
+        <h3>Running on ChatGPT</h3>
+        <p>You&rsquo;ve got people using AI tools &mdash; ChatGPT, Copilot, maybe more. It helps individual tasks but nothing&rsquo;s connected to how the business runs. Labour costs are rising, the team is stretched, and you know there&rsquo;s more to this. You just don&rsquo;t have a strategy to get there.</p>
+      </div>
+      <div class="pp-item">
+        <h3>Can&rsquo;t Scale</h3>
+        <p>You&rsquo;re growing, but the manual work is growing faster. Every new customer, every new hire, adds more process you&rsquo;re holding together with spreadsheets and people-hours. You know AI should help &mdash; but you don&rsquo;t have time to figure out where to start or who to trust.</p>
+      </div>
+      <div class="pp-item">
+        <h3>Outsourcing Your Edge</h3>
+        <p>Every time you bring a vendor in to build something, you hand them a piece of how your business works. They learn your processes. They hold the system. When it breaks, you call them. When you want to change it, you pay them. Meanwhile your team never builds the knowledge &mdash; and the gap between you and a competitor who does this in-house gets wider every month.</p>
+      </div>
+    </div>
+    <div class="pp-column">
+      <h2>PAYOFF &middot; Hook it, Land it</h2>
+      <div class="pp-item">
+        <h3>From Tactics to Strategy</h3>
+        <p>A clear AI roadmap built around your business. You know which processes to tackle first, what the return looks like, and how your team is going to own it. You can show exactly what AI is delivering.</p>
+      </div>
+      <div class="pp-item">
+        <h3>Grow Without the Chaos</h3>
+        <p>Scaling stops feeling like holding everything together and starts feeling like a plan you&rsquo;re executing. You know where AI fits, what to do first, and what the return looks like.</p>
+      </div>
+      <div class="pp-item">
+        <h3>Pay Once. Own It.</h3>
+        <p>Your team runs your AI systems. No vendor to call, no ongoing bill to justify. $50K&ndash;$150K/year in recovered time and cut costs &mdash; and your team gets better at it every month. One client saved $93K in year one from a single automation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISTAKES -->
+<section class="mistakes-section">
+  <div class="section-header">
+    <span>MISTAKES &middot; What&rsquo;s really causing the pain</span>
+    <span class="brand">LeadMark.AI</span>
+  </div>
+  <div style="padding-top: 2rem;">
+    <div class="root-cause">
+      <h3>ROOT CAUSE</h3>
+      <p>Buying AI tools instead of building AI knowledge. Any tool is only as good as the team using it &mdash; and most teams are never shown how.</p>
+    </div>
+    <div class="mistakes-grid">
+      <div class="mistake-col">
+        <h3>WRONG THINKING</h3>
+        <ul>
+          <li>&ldquo;I just need to find the right app&rdquo;</li>
+          <li>&ldquo;My IT person will figure it out&rdquo;</li>
+          <li>&ldquo;We&rsquo;ll jump on it once things settle down&rdquo;</li>
+          <li>&ldquo;Our software vendor will add AI in the next update&rdquo;</li>
+        </ul>
+      </div>
+      <div class="mistake-col">
+        <h3>WRONG ACTION</h3>
+        <ul>
+          <li>Signed up for tools that nobody used after week two</li>
+          <li>Paid a developer to build something the team never touched</li>
+          <li>Did an AI workshop &mdash; everyone got excited, nothing changed</li>
+          <li>Sent one person on a course and hoped the knowledge would spread</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ICP / DEEP FEAR / PRIZE -->
+<section>
+  <div class="section-header">
+    <span>ICP &middot; DEEP FEAR &middot; PRIZE &middot; Australia</span>
+    <span class="brand">LeadMark.AI</span>
+  </div>
+  <div style="padding-top: 2rem;">
+    <div class="icp-section">
+      <h3>IDEAL CLIENT PERSONA (ICP)</h3>
+      <div class="icp-label">The ultimate decision maker</div>
+      <p>Business owner or CEO of a growing Australian business (15&ndash;150 staff, $1M&ndash;$15M revenue). You&rsquo;ve probably got ChatGPT running somewhere &mdash; maybe more. But nothing&rsquo;s connected to how the business actually runs, and you can&rsquo;t point to what it&rsquo;s actually saved or earned. Labour is getting expensive, margins are tightening, and you know there&rsquo;s more to this. You&rsquo;re ready to move &mdash; you just need the right starting point.</p>
+      <div class="icp-acceptable">
+        <div class="icp-label" style="color: var(--grey-dark);">ACCEPTABLE (not the marketing target)</div>
+        <p>Wants a done-for-you solution + ongoing support retainer. Happy to work with them &mdash; but not who we&rsquo;re building the brand around.</p>
+      </div>
+    </div>
+
+    <div class="fear-prize-grid">
+      <div class="deep-fear">
+        <h3>DEEP FEAR</h3>
+        <div class="subtitle">Their core emotional driver</div>
+        <blockquote>&ldquo;Labour costs will keep rising, our team will keep hitting capacity, and we&rsquo;ll still be running on spreadsheets while competitors who figured out AI run circles around us.&rdquo;</blockquote>
+      </div>
+      <div class="prize-box">
+        <h3>PRIZE</h3>
+        <div class="subtitle">A unique 4-word pitch that captures the essence of the desired outcome</div>
+        <div class="prize-text">AI That Pays Off</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span class="brand">LeadMark.AI</span> &middot; Value Canvas &middot; Australia &middot; CAOS Cohort &middot; March 2026
+</div>
+
+</body>
+</html>
