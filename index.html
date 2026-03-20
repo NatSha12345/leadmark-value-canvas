@@ -1,551 +1,351 @@
-te<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#FFFFFF">
-<title>LeadMark.AI — We Build Your AI Muscles So You Can Scale</title>
-<meta name="description" content="AI transformation for scaling businesses. Strategy, automation, and capability transfer — your team owns it, not us.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>LeadMark.AI — Value Canvas — Australia</title>
 <style>
+  :root {
+    --navy: #263354;
+    --red: #E31B23;
+    --white: #FFFFFF;
+    --grey-light: #F0F2F5;
+    --grey-mid: #C8CCD4;
+    --grey-dark: #5A6378;
+    --light-navy: #F5F6F9;
+  }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
+  html, body { height: 100%; }
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #FFFFFF;
-    color: #263354;
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.6;
-  }
-
-  /* — NAV — */
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 16px 24px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    z-index: 100;
+    font-family: 'Calibri', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--white);
+    color: var(--navy);
+    line-height: 1.4;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(38, 51, 84, 0.1);
-  }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
-
-  .nav-dot {
-    width: 10px;
-    height: 10px;
-    background: #6EC1E4;
-  }
-
-  .nav-name {
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #263354;
-  }
-
-  .nav-cta {
-    padding: 10px 24px;
-    background: #61CE70;
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border-radius: 4px;
-  }
-
-  .nav-cta:active { background: #4fb85d; }
-
-  /* — HERO — */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+    flex-direction: column;
+    height: 100vh;
     overflow: hidden;
   }
 
-  .hero-bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 55%;
-    height: 100%;
-    background: url('c/AI Muscle.jpg') center center / cover no-repeat;
-    opacity: 0.15;
-  }
-
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(90deg, #FFFFFF 0%, transparent 40%),
-                linear-gradient(0deg, #FFFFFF 0%, transparent 30%);
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 680px;
-    padding: 120px 48px 80px;
-  }
-
-  .hero-tag {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #6EC1E4;
-    margin-bottom: 24px;
-    padding: 8px 16px;
-    border: 1px solid rgba(110, 193, 228, 0.4);
-  }
-
-  .hero h1 {
-    font-size: clamp(2.4rem, 5vw, 3.8rem);
-    font-weight: 900;
-    line-height: 1.08;
-    margin-bottom: 12px;
-    letter-spacing: -0.02em;
-    color: #263354;
-  }
-
-  .hero h1 span {
-    color: #6EC1E4;
-  }
-
-  .hero-sub {
-    font-size: 1.15rem;
-    color: #7A7A7A;
-    margin-bottom: 40px;
-    max-width: 520px;
-    line-height: 1.6;
-  }
-
-  .hero-cta {
-    display: inline-block;
-    padding: 18px 48px;
-    background: #61CE70;
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    border-radius: 4px;
-  }
-
-  .hero-cta:active { background: #4fb85d; }
-
-  /* — DIVIDER — */
-  .gold-divider {
-    height: 3px;
-    background: linear-gradient(90deg, #6EC1E4, #61CE70, transparent);
-  }
-
-  /* — SECTION BASE — */
-  section {
-    padding: 80px 48px;
-  }
-
-  .section-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #6EC1E4;
-    margin-bottom: 16px;
-  }
-
-  .section-title {
-    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-    font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 20px;
-    letter-spacing: -0.01em;
-    color: #263354;
-  }
-
-  .section-sub {
-    font-size: 1rem;
-    color: #7A7A7A;
-    max-width: 560px;
-    margin-bottom: 48px;
-    line-height: 1.7;
-  }
-
-  /* — PAIN SECTION — */
-  .pain {
-    background: #F5F7FA;
-  }
-
-  .pain-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    max-width: 1000px;
-  }
-
-  .pain-card {
-    padding: 32px;
-    background: #FFFFFF;
-    border-left: 3px solid #6EC1E4;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  }
-
-  .pain-card h3 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    line-height: 1.3;
-    color: #263354;
-  }
-
-  .pain-card p {
-    font-size: 0.9rem;
-    color: #7A7A7A;
-    line-height: 1.65;
-  }
-
-  /* — METHOD SECTION — */
-  .method {
-    background: #FFFFFF;
-  }
-
-  .method-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-    max-width: 1000px;
-  }
-
-  .method-card {
-    padding: 32px;
-    background: #F5F7FA;
-    border-top: 3px solid #6EC1E4;
-  }
-
-  .method-num {
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: rgba(110, 193, 228, 0.25);
-    margin-bottom: 12px;
-    line-height: 1;
-  }
-
-  .method-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #263354;
-  }
-
-  .method-card p {
-    font-size: 0.88rem;
-    color: #7A7A7A;
-    line-height: 1.65;
-  }
-
-  /* — PAYOFF SECTION — */
-  .payoff {
-    background: #F5F7FA;
-  }
-
-  .payoff-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    max-width: 1000px;
-  }
-
-  .payoff-card {
-    padding: 32px;
-    background: #FFFFFF;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  }
-
-  .payoff-card h3 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #263354;
-  }
-
-  .payoff-icon {
-    font-size: 1.6rem;
-    margin-bottom: 16px;
-    display: block;
-    color: #6EC1E4;
-  }
-
-  .payoff-card p {
-    font-size: 0.88rem;
-    color: #7A7A7A;
-    line-height: 1.65;
-  }
-
-  /* — ABOUT — */
-  .about {
-    background: #FFFFFF;
-    padding: 48px 48px 32px;
-  }
-
-  .about-content {
-    max-width: 640px;
-  }
-
-  .about-content p {
-    font-size: 0.95rem;
-    color: #7A7A7A;
-    line-height: 1.7;
-    margin-bottom: 16px;
-  }
-
-  .about-content strong {
-    color: #263354;
-  }
-
-  /* — CTA SECTION — */
-  .cta-section {
-    background: #263354;
-    text-align: center;
-    padding: 80px 48px;
-  }
-
-  .cta-section h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 900;
-    color: #FFFFFF;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
-  }
-
-  .cta-section p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 36px;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .cta-btn {
-    display: inline-block;
-    padding: 18px 56px;
-    background: #61CE70;
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    border-radius: 4px;
-  }
-
-  .cta-btn:active { background: #4fb85d; }
-
-  /* — FOOTER — */
-  footer {
-    padding: 24px 48px;
-    background: #FFFFFF;
-    border-top: 1px solid rgba(38, 51, 84, 0.1);
+  /* ─── HEADER BAR ─── */
+  .header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 0.45rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
+    flex-shrink: 0;
+  }
+  .header-left { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; }
+  .header-left .accent { color: var(--red); }
+  .header-right { font-size: 0.72rem; font-style: italic; color: var(--grey-mid); }
+
+  /* ─── MAIN CANVAS ─── */
+  .canvas {
+    flex: 1;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 0.4rem;
+    gap: 0.4rem;
+    min-height: 0;
+    overflow: hidden;
   }
 
-  .footer-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  /* ─── SIGNATURE METHOD ROW ─── */
+  .sig-row {
+    background: var(--light-navy);
+    border: 1px solid var(--grey-mid);
+    border-radius: 4px;
+    padding: 0.4rem 0.7rem;
+  }
+  .sig-title { font-size: 0.8rem; font-weight: 700; color: var(--navy); letter-spacing: 0.05em; margin-bottom: 0.1rem; }
+  .sig-title .accent { color: var(--red); }
+  .sig-sub { font-size: 0.72rem; font-style: italic; color: var(--grey-dark); margin-bottom: 0.35rem; }
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.35rem;
+  }
+  .pillar {
+    padding: 0.4rem 0.5rem;
+    border-radius: 4px;
+    position: relative;
+  }
+  .pillar:nth-child(odd) { background: var(--navy); color: var(--white); }
+  .pillar:nth-child(even) { background: var(--red); color: var(--white); }
+  .pillar h4 { font-size: 0.7rem; letter-spacing: 0.08em; margin-bottom: 0.15rem; }
+  .pillar p { font-size: 0.68rem; line-height: 1.35; }
+  .pillar-arrow {
+    position: absolute;
+    right: -0.45rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--grey-dark);
+    z-index: 1;
   }
 
-  .footer-links {
-    display: flex;
-    gap: 24px;
+  /* ─── MIDDLE 3-COLUMN ROW ─── */
+  .main-row {
+    display: grid;
+    grid-template-columns: 1.1fr 1.6fr 1.1fr;
+    gap: 0.4rem;
+    min-height: 0;
+    overflow: hidden;
   }
-
-  .footer-links a {
-    font-size: 0.8rem;
-    color: #7A7A7A;
-    text-decoration: none;
+  .col-header {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
     letter-spacing: 0.04em;
+    border-radius: 4px 4px 0 0;
+  }
+  .col-header.pain { background: var(--navy); color: var(--white); }
+  .col-header.mistakes { background: var(--grey-dark); color: var(--white); }
+  .col-header.payoff { background: var(--navy); color: var(--white); }
+
+  .col-body {
+    border: 1px solid var(--grey-mid);
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    padding: 0.4rem 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+  }
+  .col-body.pain-body, .col-body.payoff-body { background: var(--light-navy); }
+  .col-body.mistakes-body { background: var(--white); }
+
+  .pain-col, .payoff-col { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
+
+  /* Pain / Payoff items */
+  .pp-item {
+    flex: 1;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--grey-mid);
+    overflow: hidden;
+  }
+  .pp-item:last-child { border-bottom: none; }
+  .pp-item h5 { font-size: 0.75rem; font-weight: 700; margin-bottom: 0.1rem; color: var(--navy); }
+  .pp-item p { font-size: 0.68rem; color: #444; line-height: 1.4; }
+
+  /* Mistakes column */
+  .mistakes-col { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
+  .root-cause { margin-bottom: 0.35rem; }
+  .root-cause .label { font-size: 0.65rem; font-weight: 700; color: var(--red); letter-spacing: 0.06em; margin-bottom: 0.1rem; }
+  .root-cause p { font-size: 0.7rem; font-style: italic; line-height: 1.4; }
+  .mistakes-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .mistake-half h5 { font-size: 0.63rem; font-weight: 700; color: var(--grey-dark); letter-spacing: 0.05em; margin-bottom: 0.2rem; }
+  .mistake-half ul { list-style: none; }
+  .mistake-half li { font-size: 0.68rem; line-height: 1.35; padding: 0.12rem 0; }
+  .mistake-half li::before { content: '\2022'; color: var(--red); font-weight: 700; margin-right: 0.3rem; }
+
+  /* ─── BOTTOM ROW: DEEP FEAR / ICP / PRIZE ─── */
+  .bottom-row {
+    display: grid;
+    grid-template-columns: 1.1fr 1.6fr 1.1fr;
+    gap: 0.4rem;
+    min-height: 0;
+    overflow: hidden;
   }
 
-  .footer-links a:hover { color: #6EC1E4; }
-
-  .footer-copy {
+  .deep-fear-box {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 4px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .deep-fear-box h4 { font-size: 0.7rem; color: var(--red); letter-spacing: 0.06em; margin-bottom: 0.08rem; }
+  .deep-fear-box .subtitle { font-size: 0.6rem; font-style: italic; color: var(--grey-mid); margin-bottom: 0.3rem; }
+  .deep-fear-box blockquote {
     font-size: 0.72rem;
-    color: #999;
-    width: 100%;
-    text-align: center;
-    margin-top: 16px;
+    font-style: italic;
+    line-height: 1.45;
+    border-left: 2px solid var(--red);
+    padding-left: 0.5rem;
   }
 
-  /* — RESPONSIVE — */
-  @media (max-width: 768px) {
-    section { padding: 60px 24px; }
-    .hero-content { padding: 100px 24px 60px; }
-    .hero-bg { width: 100%; opacity: 0.1; }
-    .cta-section { padding: 60px 24px; }
-    footer { padding: 32px 24px; flex-direction: column; text-align: center; }
-    .footer-links { justify-content: center; }
-    nav { padding: 14px 20px; }
+  .icp-box {
+    background: var(--light-navy);
+    border: 1px solid var(--grey-mid);
+    border-radius: 4px;
+    padding: 0.5rem;
+    overflow: hidden;
   }
+  .icp-box h4 { font-size: 0.7rem; letter-spacing: 0.04em; margin-bottom: 0.15rem; color: var(--navy); }
+  .icp-box .icp-label { font-size: 0.65rem; font-weight: 700; margin-bottom: 0.1rem; color: var(--navy); }
+  .icp-box p { font-size: 0.68rem; line-height: 1.4; }
+  .icp-acceptable { margin-top: 0.25rem; padding-top: 0.25rem; border-top: 1px solid var(--grey-mid); }
+  .icp-acceptable p { font-style: italic; color: var(--grey-dark); }
+
+  .prize-box {
+    background: var(--red);
+    color: var(--white);
+    border-radius: 4px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .prize-box h4 { font-size: 0.7rem; letter-spacing: 0.06em; margin-bottom: 0.08rem; }
+  .prize-box .subtitle { font-size: 0.6rem; font-style: italic; margin-bottom: 0.35rem; line-height: 1.4; opacity: 0.9; }
+  .prize-box .prize-text { font-size: 1rem; font-weight: 800; line-height: 1.25; }
+  .prize-box .prize-cta { font-size: 0.8rem; font-weight: 700; font-style: italic; margin-top: 0.35rem; opacity: 0.9; }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">
-    <div class="nav-dot"></div>
-    <span class="nav-name">LeadMark.AI</span>
-  </a>
-  <a href="https://tally.so/r/wv7LW0" class="nav-cta" target="_blank" rel="noopener">Let's Talk</a>
-</nav>
+<!-- HEADER -->
+<div class="header">
+  <span class="header-left">LeadMark.AI <span class="accent">&middot;</span> Value Canvas <span class="accent">&middot;</span> Australia <span class="accent">&middot;</span> CAOS Cohort <span class="accent">&middot;</span> March 2026</span>
+  <span class="header-right">&ldquo;You&rsquo;re standing on a mountain of value.&rdquo;</span>
+</div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-tag">LeadMark.AI</div>
-    <h1><span>We Build Your<br>AI Muscles</span><br>So You Can Scale</h1>
-     <p class="hero-sub">For growing businesses with 10–30 people who know AI should be helping — but can't figure out where to start.</p>
-    <a href="https://tally.so/r/wv7LW0" class="hero-cta" target="_blank" rel="noopener">Let's Get You AI Fit</a>
-  </div>
-</section>
+<div class="canvas">
 
-<div class="gold-divider"></div>
-
-<!-- PAIN -->
-<section class="pain">
-  <p class="section-label">Our Clients Can Relate to These</p>
-
-  <div class="pain-grid">
-    <div class="pain-card">
-      <h3>"We're growing — but drowning in admin"</h3>
-      <p>Every new customer means more manual work. More spreadsheets, more follow-ups, more people stretched thin.</p>
-    </div>
-    <div class="pain-card">
-      <h3>"We've got AI tools — but nothing to show for it"</h3>
-      <p>ChatGPT here, Copilot there. Can't point to what any of it has saved or earned.</p>
-    </div>
-    <div class="pain-card">
-      <h3>"We can't move without calling someone"</h3>
-      <p>They built it, they control it. Every change means another invoice. That's not a partnership, that's a dependency.</p>
+  <!-- SIGNATURE METHOD -->
+  <div class="sig-row">
+    <div class="sig-title">SIGNATURE METHOD <span class="accent">&middot;</span> From AI Haze to AI Fit</div>
+    <div class="sig-sub">Whether you&rsquo;re starting from zero or already tinkering &mdash; we build from where you are.</div>
+    <div class="pillars">
+      <div class="pillar">
+        <h4>DIAGNOSE</h4>
+        <p>We cut through the haze. What&rsquo;s costing you time? What&rsquo;s actually worth automating? We find the moves that make a real difference.</p>
+        <span class="pillar-arrow">&rarr;</span>
+      </div>
+      <div class="pillar">
+        <h4>TRAIN</h4>
+        <p>Your team understands AI &mdash; what it can do and how to think about it. They get the foundations before they start building.</p>
+        <span class="pillar-arrow">&rarr;</span>
+      </div>
+      <div class="pillar">
+        <h4>REPS</h4>
+        <p>We build it together. Your team is in the room, doing the reps. They know how it works and how to change it.</p>
+        <span class="pillar-arrow">&rarr;</span>
+      </div>
+      <div class="pillar">
+        <h4>AI FIT</h4>
+        <p>Your team drives it from here. They run it, change it, build the next one. No calling us. No calling anyone. The muscle is yours.</p>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- METHOD -->
-<section class="method">
-  <p class="section-label">How It Works</p>
-  <h2 class="section-title">We get you from AI Haze to AI Fit</h2>
+  <!-- MAIN 3-COLUMN: PAIN / MISTAKES / PAYOFF -->
+  <div class="main-row">
+    <!-- PAIN -->
+    <div class="pain-col">
+      <div class="col-header pain">PAIN &middot; What keeps you up at night</div>
+      <div class="col-body pain-body">
+        <div class="pp-item">
+          <h5>&ldquo;We&rsquo;re growing &mdash; but drowning in admin&rdquo;</h5>
+          <p>Every new customer adds more manual process. More spreadsheets, more follow-ups, more people stretched thin. You know AI should help &mdash; you just can&rsquo;t figure out where to start without it becoming another project that stalls.</p>
+        </div>
+        <div class="pp-item">
+          <h5>&ldquo;We&rsquo;ve got AI tools &mdash; but nothing to show for it&rdquo;</h5>
+          <p>People are using ChatGPT, Copilot, bits and pieces. But it&rsquo;s not connected to anything. You can&rsquo;t point to what it&rsquo;s saved or earned. It feels like everyone&rsquo;s experimenting and nobody&rsquo;s steering.</p>
+        </div>
+        <div class="pp-item">
+          <h5>&ldquo;We can&rsquo;t move without calling someone&rdquo;</h5>
+          <p>They built it, they control it. Every change means another invoice. Your team never learns how it works &mdash; and you&rsquo;re stuck relying on people who don&rsquo;t run your business.</p>
+        </div>
+      </div>
+    </div>
 
-  <div class="method-grid">
-    <div class="method-card">
-      <div class="method-num">01</div>
-      <h3>Diagnose</h3>
-      <p>We cut through the haze and find what's actually worth automating.</p>
+    <!-- MISTAKES -->
+    <div class="mistakes-col">
+      <div class="col-header mistakes">MISTAKES &middot; Why it&rsquo;s not working yet</div>
+      <div class="col-body mistakes-body">
+        <div class="root-cause">
+          <div class="label">THE REAL PROBLEM</div>
+          <p>You&rsquo;ve been buying tools but seeing no real results. The best tools in the world don&rsquo;t work if nobody in your team actually knows how to use them.</p>
+        </div>
+        <div class="mistakes-split">
+          <div class="mistake-half">
+            <h5>WHAT PEOPLE TELL THEMSELVES</h5>
+            <ul>
+              <li>&ldquo;I just need to find the right app&rdquo;</li>
+              <li>&ldquo;My IT guy will sort it out&rdquo;</li>
+              <li>&ldquo;We&rsquo;ll get to it once things calm down&rdquo;</li>
+              <li>&ldquo;Our software will add AI eventually&rdquo;</li>
+            </ul>
+          </div>
+          <div class="mistake-half">
+            <h5>WHAT ACTUALLY HAPPENS</h5>
+            <ul>
+              <li>Signed up for tools nobody used after week two</li>
+              <li>Paid someone to build something the team never touched</li>
+              <li>Did a workshop &mdash; everyone got excited, nothing changed</li>
+              <li>Sent one person on a course and hoped it would spread</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="method-card">
-      <div class="method-num">02</div>
-      <h3>Train</h3>
-      <p>Your team learns AI — what it can do and how to think about it.</p>
-    </div>
-    <div class="method-card">
-      <div class="method-num">03</div>
-      <h3>Reps</h3>
-      <p>We build it together. Your team does the reps, not just watches.</p>
-    </div>
-    <div class="method-card">
-      <div class="method-num">04</div>
-      <h3>AI Fit</h3>
-      <p>Your team drives it from here. The muscle is yours.</p>
+
+    <!-- PAYOFF -->
+    <div class="payoff-col">
+      <div class="col-header payoff">PAYOFF &middot; What changes</div>
+      <div class="col-body payoff-body">
+        <div class="pp-item">
+          <h5>You&rsquo;re back in the driver seat</h5>
+          <p>You&rsquo;ve got a clear plan &mdash; not a pile of tools. You know what to tackle first, what the return looks like, and your team can show you exactly what AI is doing for the business.</p>
+        </div>
+        <div class="pp-item">
+          <h5>You grow without the chaos</h5>
+          <p>Scaling stops feeling like holding everything together with duct tape. You&rsquo;ve got systems doing the heavy lifting, your team knows how to run them, and growth actually feels manageable.</p>
+        </div>
+        <div class="pp-item">
+          <h5>You stop paying for what your team can do</h5>
+          <p>No more vendor calls. No ongoing retainers for stuff your people should know how to run. $50K&ndash;$150K/year back in your pocket &mdash; and your team gets sharper every month. One client saved $93K in year one from a single automation.</p>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<div class="gold-divider"></div>
-
-<!-- PAYOFF -->
-<section class="payoff">
-  <p class="section-label">What You Get</p>
-  <h2 class="section-title">After we're done</h2>
-
-  <div class="payoff-grid">
-    <div class="payoff-card">
-      <span class="payoff-icon">&#9670;</span>
-      <h3>You know what's working</h3>
-      <p>Real numbers, not buzzwords.</p>
+  <!-- BOTTOM ROW: DEEP FEAR / ICP / PRIZE -->
+  <div class="bottom-row">
+    <div class="deep-fear-box">
+      <h4>DEEP FEAR</h4>
+      <div class="subtitle">The thing they won&rsquo;t say out loud</div>
+      <blockquote>&ldquo;We&rsquo;re going to keep throwing money at this, keep falling behind, and watch someone leaner and faster eat our lunch &mdash; because they figured out how to make AI actually work.&rdquo;</blockquote>
     </div>
-    <div class="payoff-card">
-      <span class="payoff-icon">&#9670;</span>
-      <h3>You grow without the chaos</h3>
-      <p>Systems do the heavy lifting.</p>
+
+    <div class="icp-box">
+      <h4>IDEAL CLIENT &middot; Who are we really talking to?</h4>
+      <div class="icp-label">THE PERSON:</div>
+      <p>Business owner or CEO running a growing Australian business &mdash; 15 to 150 people, $1M&ndash;$15M revenue. You&rsquo;ve got ChatGPT floating around the office. Maybe a few other tools. But you can&rsquo;t point to what any of it has actually done. Costs keep climbing, the team&rsquo;s stretched, and you know there&rsquo;s a better way. You just need someone to show you where to start.</p>
+      <div class="icp-acceptable">
+        <div class="icp-label" style="color:var(--grey-dark);">ALSO WELCOME:</div>
+        <p>Wants done-for-you + ongoing support. Happy to help &mdash; but not who the brand speaks to.</p>
+      </div>
     </div>
-    <div class="payoff-card">
-      <span class="payoff-icon">&#9670;</span>
-      <h3>You stay in control</h3>
-      <p>No vendor lock-in. The edge is yours.</p>
+
+    <div class="prize-box">
+      <h4>PRIZE</h4>
+      <div class="subtitle">The pitch</div>
+      <div class="prize-text">We Build Your AI Muscles So You Can Scale</div>
+      <div class="prize-cta">Let's Get You AI Fit</div>
     </div>
   </div>
-</section>
 
-<!-- ABOUT -->
-<section class="about">
-  <p class="section-label">Your Partner</p>
-  <h2 class="section-title">Nataliya Shalygina</h2>
-  <div class="about-content">
-    <p><strong>15+ years helping businesses adopt technology that actually sticks.</strong></p>
-    <p>AI only works if your people can use it. I build the muscle — so when I leave, you keep going.</p>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <h2>Let's Get You AI Fit</h2>
-  <p>Book a free call. We'll look at where AI can save you the most time — no pitch, just straight talk.</p>
-  <a href="https://tally.so/r/wv7LW0" class="cta-btn" target="_blank" rel="noopener">Book a Call</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-left">
-    <div class="nav-dot"></div>
-    <span class="nav-name">LeadMark.AI</span>
-  </div>
-  <div class="footer-links">
-    <a href="mailto:nataliya@leadmark.ai">nataliya@leadmark.ai</a>
-    <a href="https://www.linkedin.com/in/nataliya-shalygina-7540b418/" target="_blank" rel="noopener">LinkedIn</a>
-  </div>
-  <p class="footer-copy">&copy; 2026 LeadMark.AI. Melbourne, Australia.</p>
-</footer>
+</div>
 
 </body>
 </html>
