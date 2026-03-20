@@ -6,20 +6,19 @@
 <title>LeadMark.AI — Value Canvas — Australia</title>
 <style>
   :root {
-    --navy: #263354;
-    --red: #E31B23;
+    --black: #1A1A1A;
     --white: #FFFFFF;
-    --grey-light: #F0F2F5;
-    --grey-mid: #C8CCD4;
-    --grey-dark: #5A6378;
-    --light-navy: #F5F6F9;
+    --grey-light: #F5F5F5;
+    --grey-mid: #D0D0D0;
+    --grey-dark: #666666;
+    --grey-text: #444444;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { height: 100%; }
   body {
     font-family: 'Calibri', 'Segoe UI', system-ui, -apple-system, sans-serif;
     background: var(--white);
-    color: var(--navy);
+    color: var(--black);
     line-height: 1.4;
     display: flex;
     flex-direction: column;
@@ -29,7 +28,7 @@
 
   /* ─── HEADER BAR ─── */
   .header {
-    background: var(--navy);
+    background: var(--black);
     color: var(--white);
     padding: 0.45rem 1rem;
     display: flex;
@@ -37,9 +36,8 @@
     align-items: center;
     flex-shrink: 0;
   }
-  .header-left { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; }
-  .header-left .accent { color: var(--red); }
-  .header-right { font-size: 0.72rem; font-style: italic; color: var(--grey-mid); }
+  .header-left { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em; }
+  .header-right { font-size: 0.8rem; font-style: italic; color: var(--grey-mid); }
 
   /* ─── MAIN CANVAS ─── */
   .canvas {
@@ -54,14 +52,13 @@
 
   /* ─── SIGNATURE METHOD ROW ─── */
   .sig-row {
-    background: var(--light-navy);
+    background: var(--grey-light);
     border: 1px solid var(--grey-mid);
     border-radius: 4px;
     padding: 0.4rem 0.7rem;
   }
-  .sig-title { font-size: 0.8rem; font-weight: 700; color: var(--navy); letter-spacing: 0.05em; margin-bottom: 0.1rem; }
-  .sig-title .accent { color: var(--red); }
-  .sig-sub { font-size: 0.72rem; font-style: italic; color: var(--grey-dark); margin-bottom: 0.35rem; }
+  .sig-title { font-size: 0.9rem; font-weight: 700; color: var(--black); letter-spacing: 0.05em; margin-bottom: 0.1rem; }
+  .sig-sub { font-size: 0.8rem; font-style: italic; color: var(--grey-dark); margin-bottom: 0.35rem; }
   .pillars {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -71,11 +68,11 @@
     padding: 0.4rem 0.5rem;
     border-radius: 4px;
     position: relative;
+    background: var(--black);
+    color: var(--white);
   }
-  .pillar:nth-child(odd) { background: var(--navy); color: var(--white); }
-  .pillar:nth-child(even) { background: var(--red); color: var(--white); }
-  .pillar h4 { font-size: 0.7rem; letter-spacing: 0.08em; margin-bottom: 0.15rem; }
-  .pillar p { font-size: 0.68rem; line-height: 1.35; }
+  .pillar h4 { font-size: 0.8rem; letter-spacing: 0.08em; margin-bottom: 0.15rem; }
+  .pillar p { font-size: 0.78rem; line-height: 1.35; }
   .pillar-arrow {
     position: absolute;
     right: -0.45rem;
@@ -97,14 +94,13 @@
   }
   .col-header {
     padding: 0.3rem 0.5rem;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.04em;
     border-radius: 4px 4px 0 0;
+    background: var(--black);
+    color: var(--white);
   }
-  .col-header.pain { background: var(--navy); color: var(--white); }
-  .col-header.mistakes { background: var(--grey-dark); color: var(--white); }
-  .col-header.payoff { background: var(--navy); color: var(--white); }
 
   .col-body {
     border: 1px solid var(--grey-mid);
@@ -116,9 +112,8 @@
     flex-direction: column;
     min-height: 0;
     flex: 1;
+    background: var(--white);
   }
-  .col-body.pain-body, .col-body.payoff-body { background: var(--light-navy); }
-  .col-body.mistakes-body { background: var(--white); }
 
   .pain-col, .payoff-col { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
 
@@ -130,14 +125,14 @@
     overflow: hidden;
   }
   .pp-item:last-child { border-bottom: none; }
-  .pp-item h5 { font-size: 0.75rem; font-weight: 700; margin-bottom: 0.1rem; color: var(--navy); }
-  .pp-item p { font-size: 0.68rem; color: #444; line-height: 1.4; }
+  .pp-item h5 { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.1rem; color: var(--black); }
+  .pp-item p { font-size: 0.78rem; color: var(--grey-text); line-height: 1.4; }
 
   /* Mistakes column */
   .mistakes-col { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
   .root-cause { margin-bottom: 0.35rem; }
-  .root-cause .label { font-size: 0.65rem; font-weight: 700; color: var(--red); letter-spacing: 0.06em; margin-bottom: 0.1rem; }
-  .root-cause p { font-size: 0.7rem; font-style: italic; line-height: 1.4; }
+  .root-cause .label { font-size: 0.75rem; font-weight: 700; color: var(--black); letter-spacing: 0.06em; margin-bottom: 0.1rem; }
+  .root-cause p { font-size: 0.8rem; font-style: italic; line-height: 1.4; }
   .mistakes-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -146,10 +141,10 @@
     min-height: 0;
     overflow: hidden;
   }
-  .mistake-half h5 { font-size: 0.63rem; font-weight: 700; color: var(--grey-dark); letter-spacing: 0.05em; margin-bottom: 0.2rem; }
+  .mistake-half h5 { font-size: 0.75rem; font-weight: 700; color: var(--grey-dark); letter-spacing: 0.05em; margin-bottom: 0.2rem; }
   .mistake-half ul { list-style: none; }
-  .mistake-half li { font-size: 0.68rem; line-height: 1.35; padding: 0.12rem 0; }
-  .mistake-half li::before { content: '\2022'; color: var(--red); font-weight: 700; margin-right: 0.3rem; }
+  .mistake-half li { font-size: 0.78rem; line-height: 1.35; padding: 0.12rem 0; }
+  .mistake-half li::before { content: '\2022'; color: var(--black); font-weight: 700; margin-right: 0.3rem; }
 
   /* ─── BOTTOM ROW: DEEP FEAR / ICP / PRIZE ─── */
   .bottom-row {
@@ -161,7 +156,7 @@
   }
 
   .deep-fear-box {
-    background: var(--navy);
+    background: var(--black);
     color: var(--white);
     border-radius: 4px;
     padding: 0.5rem;
@@ -169,31 +164,31 @@
     flex-direction: column;
     overflow: hidden;
   }
-  .deep-fear-box h4 { font-size: 0.7rem; color: var(--red); letter-spacing: 0.06em; margin-bottom: 0.08rem; }
-  .deep-fear-box .subtitle { font-size: 0.6rem; font-style: italic; color: var(--grey-mid); margin-bottom: 0.3rem; }
+  .deep-fear-box h4 { font-size: 0.8rem; color: var(--grey-mid); letter-spacing: 0.06em; margin-bottom: 0.08rem; }
+  .deep-fear-box .subtitle { font-size: 0.7rem; font-style: italic; color: var(--grey-mid); margin-bottom: 0.3rem; }
   .deep-fear-box blockquote {
-    font-size: 0.72rem;
+    font-size: 0.82rem;
     font-style: italic;
     line-height: 1.45;
-    border-left: 2px solid var(--red);
+    border-left: 2px solid var(--grey-mid);
     padding-left: 0.5rem;
   }
 
   .icp-box {
-    background: var(--light-navy);
+    background: var(--grey-light);
     border: 1px solid var(--grey-mid);
     border-radius: 4px;
     padding: 0.5rem;
     overflow: hidden;
   }
-  .icp-box h4 { font-size: 0.7rem; letter-spacing: 0.04em; margin-bottom: 0.15rem; color: var(--navy); }
-  .icp-box .icp-label { font-size: 0.65rem; font-weight: 700; margin-bottom: 0.1rem; color: var(--navy); }
-  .icp-box p { font-size: 0.68rem; line-height: 1.4; }
+  .icp-box h4 { font-size: 0.8rem; letter-spacing: 0.04em; margin-bottom: 0.15rem; color: var(--black); }
+  .icp-box .icp-label { font-size: 0.75rem; font-weight: 700; margin-bottom: 0.1rem; color: var(--black); }
+  .icp-box p { font-size: 0.78rem; line-height: 1.4; }
   .icp-acceptable { margin-top: 0.25rem; padding-top: 0.25rem; border-top: 1px solid var(--grey-mid); }
   .icp-acceptable p { font-style: italic; color: var(--grey-dark); }
 
   .prize-box {
-    background: var(--red);
+    background: var(--black);
     color: var(--white);
     border-radius: 4px;
     padding: 0.5rem;
@@ -204,17 +199,17 @@
     text-align: center;
     overflow: hidden;
   }
-  .prize-box h4 { font-size: 0.7rem; letter-spacing: 0.06em; margin-bottom: 0.08rem; }
-  .prize-box .subtitle { font-size: 0.6rem; font-style: italic; margin-bottom: 0.35rem; line-height: 1.4; opacity: 0.9; }
-  .prize-box .prize-text { font-size: 1rem; font-weight: 800; line-height: 1.25; }
-  .prize-box .prize-cta { font-size: 0.8rem; font-weight: 700; font-style: italic; margin-top: 0.35rem; opacity: 0.9; }
+  .prize-box h4 { font-size: 0.8rem; letter-spacing: 0.06em; margin-bottom: 0.08rem; color: var(--grey-mid); }
+  .prize-box .subtitle { font-size: 0.7rem; font-style: italic; margin-bottom: 0.35rem; line-height: 1.4; opacity: 0.7; }
+  .prize-box .prize-text { font-size: 1.15rem; font-weight: 800; line-height: 1.25; }
+  .prize-box .prize-cta { font-size: 0.9rem; font-weight: 700; font-style: italic; margin-top: 0.35rem; opacity: 0.8; }
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <div class="header">
-  <span class="header-left">LeadMark.AI <span class="accent">&middot;</span> Value Canvas <span class="accent">&middot;</span> Australia <span class="accent">&middot;</span> CAOS Cohort <span class="accent">&middot;</span> March 2026</span>
+  <span class="header-left">LeadMark.AI &middot; Value Canvas &middot; Australia &middot; CAOS Cohort &middot; March 2026</span>
   <span class="header-right">&ldquo;You&rsquo;re standing on a mountain of value.&rdquo;</span>
 </div>
 
@@ -222,7 +217,7 @@
 
   <!-- SIGNATURE METHOD -->
   <div class="sig-row">
-    <div class="sig-title">SIGNATURE METHOD <span class="accent">&middot;</span> From AI Haze to AI Fit</div>
+    <div class="sig-title">SIGNATURE METHOD &middot; From AI Haze to AI Fit</div>
     <div class="sig-sub">Whether you&rsquo;re starting from zero or already tinkering &mdash; we build from where you are.</div>
     <div class="pillars">
       <div class="pillar">
@@ -251,8 +246,8 @@
   <div class="main-row">
     <!-- PAIN -->
     <div class="pain-col">
-      <div class="col-header pain">PAIN &middot; What keeps you up at night</div>
-      <div class="col-body pain-body">
+      <div class="col-header">PAIN &middot; What keeps you up at night</div>
+      <div class="col-body">
         <div class="pp-item">
           <h5>&ldquo;We&rsquo;re growing &mdash; but drowning in admin&rdquo;</h5>
           <p>Every new customer adds more manual process. More spreadsheets, more follow-ups, more people stretched thin. You know AI should help &mdash; you just can&rsquo;t figure out where to start without it becoming another project that stalls.</p>
@@ -270,8 +265,8 @@
 
     <!-- MISTAKES -->
     <div class="mistakes-col">
-      <div class="col-header mistakes">MISTAKES &middot; Why it&rsquo;s not working yet</div>
-      <div class="col-body mistakes-body">
+      <div class="col-header">MISTAKES &middot; Why it&rsquo;s not working yet</div>
+      <div class="col-body">
         <div class="root-cause">
           <div class="label">THE REAL PROBLEM</div>
           <p>You&rsquo;ve been buying tools but seeing no real results. The best tools in the world don&rsquo;t work if nobody in your team actually knows how to use them.</p>
@@ -301,8 +296,8 @@
 
     <!-- PAYOFF -->
     <div class="payoff-col">
-      <div class="col-header payoff">PAYOFF &middot; What changes</div>
-      <div class="col-body payoff-body">
+      <div class="col-header">PAYOFF &middot; What changes</div>
+      <div class="col-body">
         <div class="pp-item">
           <h5>You&rsquo;re back in the driver seat</h5>
           <p>You&rsquo;ve got a clear plan &mdash; not a pile of tools. You know what to tackle first, what the return looks like, and your team can show you exactly what AI is doing for the business.</p>
